@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: "zen kaku gothic antique", sans serif; 
+}
+
+.inputContainer {
+    max-width: 22rem;
+    border:1px solid lightgray;
+    border-radius: 8px;
+    padding: 55px 50px 40px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+}
+
+.login {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+
+.use {
+    font-weight: lighter;
+}
+
+.gInput {
+    width: 100%;
+    height: 3.5rem;
+    margin-top: 50px;
+    border: 0,5px solid lightgray; 
+    border-radius: 5px;
+    font-size: 20px;    
+    padding: 0 0 0 15px;   
+    background: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.gInput:focus {
+    border: 2px solid #4285f4;
+}
+
+.gInput:focus ~ .inputLabel::before {
+    color: #4285f4;
+    font-size: 12px;    
+    top: -65px;
+    z-index: 1;
+} 
+
+.inputLabel {
+    position: relative;
+    width: 200px;
+}
+
+.inputLabel:before {
+    content: "Email or Phone";
+    position: absolute;
+    top: -41px;
+    left: -65px;
+    background-color: white;
+    font-size: 18px;
+    z-index: -1;
+    font-weight: bold;
+    padding: 0 10px;
+    box-sizing: border-box;
+    transition: 0,1s ease;
+}
+
+.forgotContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.guest {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.buttonContainer {
+    width: 109%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;    
+}
+
+.buttonContainer a {
+    text-decoration: none;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 7px 15px 9px 15px;       
+}
+
+.btnCreate:hover{
+    color: #366fca;
+    background-color: #f6f9fe;
+}
+
+.btnNext {
+    background-color: #4285f4;
+    color: white;
+    transition: 0,1s ease;
+}
+
+.btnNext:hover{
+    background-color: #1b66c9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.forgot , .guest span , btnCreate {
+    color: #4285f4;
+}
+
+.guest , .inputLabel::before {
+    color: #5f6368;   
+}    
+
+

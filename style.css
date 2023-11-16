@@ -1,0 +1,474 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ scroll-behavior: smooth;
+}
+
+/* Style untuk navbar */
+.navbar {
+  flex-direction: row;
+  height: 100px; /* Sesuaikan dengan tinggi navbar yang diinginkan */
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(#6045ea, #8567f7);
+  padding: 0 20px; /* Padding untuk memberikan ruang di dalam navbar */
+  position: fixed; /* Membuat navbar tetap saat di-scroll */
+  top: 0; /* Menempelkan navbar di bagian atas halaman */
+  width: 100%; /* Lebar 100% agar sesuai dengan lebar layar */
+  z-index: 1000; /* Menetapkan z-index agar navbar tampil di atas elemen lain */
+  transition: background-color 0.5s ease; /* Menambahkan transisi warna latar belakang */
+  margin-bottom: -20px;
+}
+
+/* Style untuk elemen di dalam navbar */
+.navbar a {
+  color: white; /* Warna teks */
+  text-decoration: none; /* Menghapus garis bawah pada tautan */
+  margin: 0 15px; /* Ruang antara tautan */
+}
+
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px 20px; /* Adjust padding */
+  margin-top: 20px;
+
+}
+
+.logo {
+  max-width: 150px; /* Atur lebar maksimum gambar */
+  height: auto; /* Biarkan tinggi otomatis disesuaikan agar gambar tidak terdistorsi */
+  font-weight: 40px;
+  font-size: 2.4rem;
+  color: #f9690e;
+}
+
+
+
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+li {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0 4px; /* Adjust margin */
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #eceaff;
+}
+
+.cart-image {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  margin-right: 10px; /* Adjust the margin as needed to provide space between the cart image and other elements */
+}
+
+.user-pic {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sub-menu-wrap {
+  position: fixed;
+  top: 100%; /* Position it below the user picture */
+  right: 10%;
+  width: 200px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+
+
+.sub-menu-wrap.open-menu {
+  max-height: 400px;
+}
+
+.sub-menu {
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.sub-menu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fe0a0a;
+  margin: 12px 0;
+}
+
+.sub-menu-link p {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.sub-menu-link img {
+  width: 40px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+.sub-menu-link span {
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+  font-weight: 600;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  ul {
+    margin-top: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  li {
+    margin: 10px 0;
+  }
+}
+
+/* akhir dari navbar */
+
+/* Home */
+.home {
+  background-color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  z-index: 1; /* Set a higher z-index to ensure it doesn't overlap with the sub-menu */
+}
+
+
+.home-content {
+  position: relative;
+}
+
+.home-card {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+}
+
+.video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Warna hitam tembus pandang */
+  padding: 20px;
+  width: 30%; /* Atur lebar card-overlay sesuai kebutuhan */
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Warna hitam tembus pandang saat hover */
+}
+
+.card-overlay h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.card-overlay p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+
+
+/* Content */
+.cars {
+  background-color: #f2f2f2;
+  padding: 80px;
+  margin-top: -20px;
+}
+
+.cars-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cars-row {
+  width: 23%; 
+  margin-bottom: 20px;
+}
+
+.cars-card {
+  background-color: #f9690e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.cars-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cars-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+
+#button-buy {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  background: rgba(255, 13, 130);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out; /* Menambahkan transisi pada tombol */
+}
+
+#button-buy:hover {
+  background: rgb(29, 250, 0); /* Mengubah warna latar belakang saat tombol dihover */
+  color: #4d1ec5; /* Mengubah warna teks saat tombol dihover */
+}
+
+.btn-details {
+  margin: 0 20px 40px;
+  position: relative;
+  max-width: 200px;
+  min-width: 150px;
+  flex: 20%;
+}
+
+
+/* akhir dari content */
+
+
+/* Footer */
+footer {
+  background-color: #f9690e;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sec {
+  max-width: 300px;
+  margin-bottom: 30px;
+  text-align: left; /* Menyesuaikan alignment untuk memberikan tampilan yang rapi */
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px; /* Meningkatkan ukuran font untuk meningkatkan keterbacaan */
+  line-height: 1.6;
+  margin-bottom: 10px; /* Memberikan ruang antara paragraph */
+}
+
+.quicklinks .qlinks {
+  list-style: none;
+  padding: 0;
+}
+
+.qlinks li {
+  margin-bottom: 10px;
+}
+
+.qlinks a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px; /* Meningkatkan ukuran font untuk meningkatkan keterbacaan */
+  transition: color 0.3s ease-in-out;
+}
+
+.qlinks a:hover {
+  color: #222;
+}
+
+.contact .cinfo {
+  list-style: none;
+  padding: 0;
+}
+
+.cinfo li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.icon i {
+  font-size: 18px;
+}
+
+.text {
+  font-size: 16px; /* Meningkatkan ukuran font untuk meningkatkan keterbacaan */
+}
+
+/* Copyright */
+.copyrightText {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px; /* Menurunkan ukuran font untuk menyamakan dengan bagian lain footer */
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sec {
+    max-width: 100%;
+  }
+}
+
+
+.dark-mode-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dark-mode-btn:hover {
+  background-color: #555;
+}
+
+
+/* Your existing styles */
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.search-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #555;
+}
+
+
+
+
+
+
